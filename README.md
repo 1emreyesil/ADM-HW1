@@ -7,4 +7,5 @@ This repository contains the documents regarding solving the Python exercises on
 You can find all the codes that have been used for each of the exercises.
 
 **hw1_Submissions.pdf**
+
 You can find a .pdf file that contains all the submissions that I had to solve the exercises.
