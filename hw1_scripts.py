@@ -64,6 +64,8 @@ def is_leap(year):
     elif (year %4 ==0 and year % 100 !=0):
         leap = True
     return leap
+year = int(input())
+print(is_leap(year))
 
 # Introduction_Print_Function:
 
@@ -182,7 +184,11 @@ def swap_case(s):
 
             string+=(i.upper())
     return string
-
+if __name__ == '__main__':
+    s = input()
+    result = swap_case(s)
+    print(result)
+    
 # Strings_String_SplitandJoin:
 
 def split_and_join(line):
@@ -201,7 +207,11 @@ if __name__ == '__main__':
 
 def print_full_name(first, last):
     print("Hello " + first + " "+ last+ "!"+ " You just delved into python.")
-
+if __name__ == '__main__':
+    first_name = input()
+    last_name = input()
+    print_full_name(first_name, last_name)
+    
 # Strings_Mutations:
 
 def mutate_string(string, position, character):
@@ -210,7 +220,12 @@ def mutate_string(string, position, character):
     string=''.join(list1)
 
     return string
-
+if __name__ == '__main__':
+    s = input()
+    i, c = input().split()
+    s_new = mutate_string(s, int(i), c)
+    print(s_new)
+    
 # Strings_Find_a_string:
 
 def count_substring(string, sub_string):
@@ -220,7 +235,13 @@ def count_substring(string, sub_string):
             result+=1
 
     return result
-
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+    
+    count = count_substring(string, sub_string)
+    print(count)
+    
 # Strings_String_Validators:
 
 if __name__ == '__main__':
@@ -288,7 +309,10 @@ def print_formatted(number):
 
     for i in range(1, number + 1):
         print('{0:{width}d} {0:{width}o} {0:{width}X} {0:{width}b}'.format(i, width=width))
-
+if __name__ == '__main__':
+    n = int(input())
+    print_formatted(n)
+    
 # Strings_Alphabet_Rangoli:
 
 def print_rangoli(size):
@@ -301,7 +325,11 @@ def print_rangoli(size):
         temp = data[-(i+1):]
         row = temp[::-1]+temp[1:]
         print("-".join(row).center(n*4-3, "-"))
-
+        
+if __name__ == '__main__':
+    n = int(input())
+    print_rangoli(n)
+    
 # Strings_Capitalize!:
 
 def solve(s):
@@ -309,6 +337,17 @@ def solve(s):
     result1=[i.capitalize() for i in result ]
     return ' '.join(result1)
 
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = solve(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+    
 # Strings_Merge_theTools!:
 
 import textwrap as tw
@@ -324,7 +363,9 @@ def merge_the_tools(string, k):
                 result.append(c)
 
         print(''.join(result))
-
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
 
 #---------------------------------------------------------------
 
@@ -334,7 +375,12 @@ def average(array):
     distinct_array=set(array)
     average= "{:.3f}".format(sum(distinct_array)/len(distinct_array))
     return average
-
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    result = average(arr)
+    print(result)
+    
 # Sets_Symmetric_Difference:
 
 m= int(input())
@@ -740,7 +786,9 @@ def fibonacci(n):
     for i in range(2,n):
         list1.append(list1[i-2]+list1[i-1])
     return list1[0:n]
-
+if __name__ == '__main__':
+    n = int(input())
+    print(list(map(cube, fibonacci(n))))
 #---------------------------------------------------------------
 
 # RegexandParsing_Detect_Floating_Point_Number:
@@ -758,6 +806,8 @@ regex_pattern = r""	# Do not delete 'r'.
 
 
 regex_pattern = r"[.]|[,]"
+import re
+print("\n".join(re.split(regex_pattern, input())))
 
 # RegexandParsing_Group(),Groups()&Groupdict():
 
